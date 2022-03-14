@@ -1,0 +1,21 @@
+<div id="search-component">
+    <label for="search-box">Hero Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+      <li *ngFor="let hero of heroes$ | async" >
+        <a routerLink="/detail/{{hero.id}}">
+          {{hero.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- <mat-form-field class="search-component" appearance="fill">
+    <mat-label>Hero Search</mat-label>
+    <input matInput type="text" [(ngModel)]="value" #searchBox id="search-box" (input)="search(searchBox.value)">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      {{hero.name}}
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field> -->

@@ -1,0 +1,48 @@
+/* AppComponent's private CSS styles */
+h1 {
+    margin-bottom: 0;
+  }
+  nav a {
+    padding: 1rem;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #e8e8e8;
+    color: #3d3d3d;
+    border-radius: 4px;
+  }
+  
+  nav a:hover {
+    color: white;
+    background-color: #42545C;
+  }
+  nav a.active {
+    background-color: black;
+  }
+  .hello{
+    margin-right: 20px;
+  }
+  
+  .hero{
+      font-weight: bold;
+      background-color: hsl(229, 100%, 52%);
+      border-radius: 50px;
+      padding: 1rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      /* display: inline-block; */
+      color: #fff;
+      text-align: center;
+      width: 300px;
+      border: none;
+      margin-right: 20px;
+      min-width: 70px;
+      margin: .5rem auto;
+      box-sizing: border-box;
+    
+      /* flexbox */
+      /* order: 0;
+      flex: 0 1 auto;
+      align-self: auto; */
+    
+  }
