@@ -17,7 +17,10 @@ import { MessagesComponent } from './messages/messages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatInputModule} from '@angular/material/input'
+import {MatInputModule} from '@angular/material/input';
+import {CamelCase } from './pipes/camelCase.pipe';
+import { RegstrModule } from './regstr/regstr.module';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import {MatInputModule} from '@angular/material/input'
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
+    RegstrModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -38,6 +42,7 @@ import {MatInputModule} from '@angular/material/input'
   ],
   declarations: [
     AppComponent,
+    CamelCase,
     DashboardComponent,
     HeroesComponent,
     HeroDetailComponent,

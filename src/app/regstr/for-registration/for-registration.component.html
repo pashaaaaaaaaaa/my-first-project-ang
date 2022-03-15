@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="bigblock">
+        <form>
+            <h1>Create Account</h1>
+            <p>Create a free salmanwap account to access<br>
+                all articles and videos.</p>
+            
+            <label for="">Username</label>    
+            <input type="email" matInput [formControl]="emailFormControl"
+                                [errorStateMatcher]="matcher"
+                                placeholder="Ex. pat@example.com"
+                                class="userInp">
+            <span class="span">Must not contain any special character</span>   
+            <label for="">Password</label>   
+            <input type="password" matInput [formControl]="emailFormControl"
+                                [errorStateMatcher]="matcher"
+                                placeholder="Ex. pat@example.com"
+                                class="passInp">
+            <span class="pass">Must have atleast 8+ characters</span>    
+            <button class="creat-btn" mat-stroked-button>Create a free account</button>
+        </form>              
+    </div>
+</div>

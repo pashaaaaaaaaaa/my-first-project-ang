@@ -1,0 +1,107 @@
+.container{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 1600px;
+    height: 900px;
+    box-sizing: border-box;
+    padding-left: 429px;
+    padding-right: 430px;
+    padding-top: 79px;
+    padding-bottom: 80px;
+    background: #B2DDFA;
+    
+}
+.bigblock{
+    width: 741px;
+    height: 741px;
+    box-sizing: border-box;
+    padding-top: 86.99px;
+    padding-left: 149.99px;
+    padding-right: 153.03px;
+    padding-bottom: 86.99px;
+    display: flex;
+    background: #B2DDFA;
+    border: 0.805435px solid #5D9FC6;
+    box-shadow: inset 0px 0px 28.9957px rgba(4, 42, 67, 0.02);
+    border-radius: 54.7696px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+h1{
+    color: #39454D;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 38.6609px;
+    line-height: 53px;
+    margin-bottom: 3.22px;
+}
+p{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20.9413px;
+    line-height: 29px;
+    color: #303940;
+    border: 1px solid #000000;
+    margin-bottom: 38.66px;
+}
+label{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19.3304px;
+    line-height: 26px;
+    color: #303940;
+    margin-bottom: 6.44px;
+}
+.userInp{
+    width: 441px;
+    height: 70.88px;
+    background: #FFFFFF;
+    border: 2.4163px solid #5D9FC6;
+    box-sizing: border-box;
+    border-radius: 12.887px;
+    margin-bottom: 6.44px;
+}
+.span{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.1087px;
+    line-height: 22px;
+    color: #303940;
+    margin-bottom: 32.22px;
+}
+.passInp{
+    width: 441px;
+    height: 70.88px;
+    background: #FFFFFF;
+    border: 1.61087px solid #5D9FC6;
+    box-sizing: border-box;
+    border-radius: 12.887px;
+    margin-bottom: 6.44px;
+}
+.pass{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.1087px;
+    line-height: 22px;
+    color: #303940;
+    margin-bottom: 41.88px;
+}
+button{
+    width: 441.38px;
+    height: 78.13px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%), #397A96;
+    box-shadow: 0px 6.44348px 1.61087px rgba(20, 42, 52, 0.8);
+    border-radius: 16.1087px;
+    color: white;
+    font-weight: bold;
+    }
