@@ -5,14 +5,14 @@
     position: relative;
     top: 50%;
     left: 50%;
-    width: 1600px;
-    height: 900px;
+    /* width: 1600px; */
+    /* height: 900px; */
     box-sizing: border-box;
     padding-left: 429px;
     padding-right: 430px;
     padding-top: 79px;
     padding-bottom: 80px;
-    background: #B2DDFA;
+    background: #CDEAFC;
     
 }
 .bigblock{
