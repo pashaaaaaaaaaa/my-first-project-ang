@@ -12,11 +12,12 @@ import { AppModule } from '../app.module';
     ForRegistrationComponent
   ],
   imports: [
-    CommonModule, 
-    MatButtonModule,
-    MatCheckboxModule,
-    MatInputModule,
+    // CommonModule, 
+    // MatButtonModule,
+    // MatCheckboxModule,
+    // MatInputModule,
     AppModule
+  
   ]
   
 })

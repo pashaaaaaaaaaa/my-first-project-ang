@@ -19,7 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import {CamelCase } from './pipes/camelCase.pipe';
-import { RegstrModule } from './regstr/regstr.module';
+// import { RegstrModule } from './regstr/regstr.module';
 
 @NgModule({
   imports: [
@@ -30,7 +30,7 @@ import { RegstrModule } from './regstr/regstr.module';
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
-    RegstrModule,
+    // RegstrModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
