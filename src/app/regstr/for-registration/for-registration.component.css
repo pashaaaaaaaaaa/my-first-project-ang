@@ -42,6 +42,8 @@ h1{
     font-size: 38.6609px;
     line-height: 53px;
     margin-bottom: 3.22px;
+    width: 438.16px;
+    height: 52.35px;
 }
 p{
     font-family: 'Nunito';
@@ -51,6 +53,10 @@ p{
     line-height: 29px;
     color: #303940;
     margin-bottom: 38.66px;
+    width: 438.16px;
+    height: 56.38px;
+    text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000,
+          0 -1px 1px #000;
 }
 label{
     font-family: 'Nunito';
@@ -60,6 +66,8 @@ label{
     line-height: 26px;
     color: #303940;
     margin-bottom: 6.44px;
+    width: 90.21px;
+    height: 26.58px;
 }
 .userInp{
     width: 441px;
@@ -107,6 +115,10 @@ button{
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%), #397A96;
     box-shadow: 0px 6.44348px 1.61087px rgba(20, 42, 52, 0.8);
     border-radius: 16.1087px;
-    color: white;
-    font-weight: bold;
+    color: #E6F7FF;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 19.3304px;
+    line-height: 26px;
     }
