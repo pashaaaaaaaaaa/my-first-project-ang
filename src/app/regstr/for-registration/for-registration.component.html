@@ -6,16 +6,10 @@
                 all articles and videos.</p>
             
             <label for="">Username</label>    
-            <input type="email" matInput [formControl]="emailFormControl"
-                                [errorStateMatcher]="matcher"
-                                placeholder="Ex. pat@example.com"
-                                class="userInp">
+            <input type="email" placeholder="e-mail">
             <span class="span">Must not contain any special character</span>   
             <label for="">Password</label>   
-            <input type="password" matInput [formControl]="emailFormControl"
-                                [errorStateMatcher]="matcher"
-                                placeholder="Ex. pat@example.com"
-                                class="passInp">
+            <input type="password" >
             <span class="pass">Must have atleast 8+ characters</span>    
             <button class="creat-btn" mat-stroked-button>Create a free account</button>
         </form>              

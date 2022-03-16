@@ -4,6 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import { ForRegistrationComponent } from './for-registration/for-registration.component';
+import { AppModule } from '../app.module';
 
 
 @NgModule({
@@ -15,6 +16,10 @@ import { ForRegistrationComponent } from './for-registration/for-registration.co
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
+    AppModule
   ]
+  
 })
 export class RegstrModule { }
+
+
