@@ -1,0 +1,25 @@
+.wrapper_btn{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 51px;
+}
+.wrapper_btn button{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #F2F2F2;
+    color: black;
+    cursor: pointer;
+    margin-right: 4px;
+}
+.wrapper_btn button:hover{
+    color: white;
+    background: #8F07CF;
+}
+.wrapper_btn .btn-active{
+    background: #8F07CF;
+    color: white;
+}

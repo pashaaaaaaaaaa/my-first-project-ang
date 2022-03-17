@@ -1,0 +1,16 @@
+header{
+    width: 843px;
+    height: 60px;
+    box-sizing: border-box;
+    padding-top: 17.95px;
+    padding-left: 40.45px;
+    padding-bottom: 18.65px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #D8D8D8;
+    margin-bottom: 0px;
+}
+img{
+    width: 118px;
+    height: 26px;
+}
