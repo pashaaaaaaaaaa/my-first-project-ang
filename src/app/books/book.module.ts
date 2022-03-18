@@ -7,7 +7,8 @@ import { SecondPageComponent } from './second-page/second-page.component';
 import { ThirdPageComponent } from './third-page/third-page.component';
 import { FourthPageComponent } from './fourth-page/fourth-page.component';
 import { FifthPageComponent } from './fifth-page/fifth-page.component';
-import { WrBooksComponent } from './wr-books/wr-books.component';
+import { WrBooksComponent } from './wr-books.component';
+import { WrBooksRoutingModule } from './wr-books-routing.module';
 import { PaginationBookComponent } from './pagination-book/pagination-book.component';
 
 
@@ -26,7 +27,8 @@ import { PaginationBookComponent } from './pagination-book/pagination-book.compo
   ],
   imports: [
     CommonModule, 
-    AppModule
+    WrBooksRoutingModule
+    // AppModule
   ]
 })
 export class BookModule { }

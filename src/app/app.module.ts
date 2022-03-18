@@ -19,6 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
 import {CamelCase } from './pipes/camelCase.pipe';
+import { BookModule } from './books/book.module';
 // import { RegstrModule } from './regstr/regstr.module';
 
 @NgModule({
@@ -30,6 +31,7 @@ import {CamelCase } from './pipes/camelCase.pipe';
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
+    BookModule,
     // RegstrModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

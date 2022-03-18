@@ -6,17 +6,19 @@ import { SecondPageComponent } from './second-page/second-page.component';
 import { ThirdPageComponent } from './third-page/third-page.component';
 import { FourthPageComponent } from './fourth-page/fourth-page.component';
 import { FifthPageComponent } from './fifth-page/fifth-page.component';
+import { WrBooksComponent } from './wr-books.component';
 
 const getBookRout: Routes = [
-  { path: 'books', redirectTo: '/books/first-paget', pathMatch: 'full' },
-  { path: 'first-page', component: FirstPageComponent }, 
-  { path: 'second-page', component: SecondPageComponent }, 
-  { path: 'third-page', component: ThirdPageComponent }, 
-  { path: 'fourth-page', component: FourthPageComponent }, 
-  { path: 'fifth-page', component: FifthPageComponent }, 
+  { path: 'books', component: WrBooksComponent, children: [
+    { path: '', redirectTo: 'books/title-1', pathMatch: 'full' },
+    { path: 'title-1', component: FirstPageComponent }, 
+    { path: 'title-2', component: SecondPageComponent }, 
+    { path: 'title-3', component: ThirdPageComponent }, 
+    { path: 'title-4', component: FourthPageComponent }, 
+    { path: 'title-5', component: FifthPageComponent }, 
+  ]},
 
 ]
-
 
 @NgModule({
   declarations: [],

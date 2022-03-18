@@ -39,6 +39,7 @@ h1 {
       min-width: 70px;
       margin: .5rem auto;
       box-sizing: border-box;
+      margin-bottom: 20px;
     
       /* flexbox */
       /* order: 0;

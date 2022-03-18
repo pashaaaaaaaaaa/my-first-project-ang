@@ -1,25 +1,22 @@
 .wrapper_btn{
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 51px;
+    width: 843px;
+	margin: 0 auto 24px;
 }
-.wrapper_btn button{
+.pagination{
+    text-align: center;
+}
+button{
+    margin: 0 4px;
     width: 28px;
     height: 28px;
     border-radius: 50%;
     border: none;
-    background: #F2F2F2;
     color: black;
+    background: #F2F2F2;
     cursor: pointer;
-    margin-right: 4px;
 }
-.wrapper_btn button:hover{
-    color: white;
-    background: #8F07CF;
-}
-.wrapper_btn .btn-active{
-    background: #8F07CF;
+button:focus {
+    background-color: #8F07CF;
     color: white;
 }
+
