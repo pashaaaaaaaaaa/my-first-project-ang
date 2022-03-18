@@ -10,7 +10,7 @@ import { WrBooksComponent } from './wr-books.component';
 
 const getBookRout: Routes = [
   { path: 'books', component: WrBooksComponent, children: [
-    { path: '', redirectTo: 'books/title-1', pathMatch: 'full' },
+    { path: '', redirectTo: '/books/title-1', pathMatch: 'full' },
     { path: 'title-1', component: FirstPageComponent }, 
     { path: 'title-2', component: SecondPageComponent }, 
     { path: 'title-3', component: ThirdPageComponent }, 

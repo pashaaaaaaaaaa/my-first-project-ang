@@ -10,6 +10,8 @@ import { FifthPageComponent } from './fifth-page/fifth-page.component';
 import { WrBooksComponent } from './wr-books.component';
 import { WrBooksRoutingModule } from './wr-books-routing.module';
 import { PaginationBookComponent } from './pagination-book/pagination-book.component';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 
@@ -23,9 +25,10 @@ import { PaginationBookComponent } from './pagination-book/pagination-book.compo
     FourthPageComponent,
     FifthPageComponent,
     WrBooksComponent,
-    PaginationBookComponent
+    PaginationBookComponent,
   ],
   imports: [
+    MatButtonModule,
     CommonModule, 
     WrBooksRoutingModule
     // AppModule
