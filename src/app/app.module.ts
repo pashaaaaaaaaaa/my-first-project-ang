@@ -15,13 +15,13 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatInputModule} from '@angular/material/input';
-import {CamelCase } from './pipes/camelCase.pipe';
+import { MatButtonModule} from '@angular/material/button';
+import { MatCheckboxModule} from '@angular/material/checkbox';
+import { MatInputModule} from '@angular/material/input';
+import { CamelCase } from './pipes/camelCase.pipe';
 import { BookModule } from './books/book.module';
-// import { RegstrModule } from './regstr/regstr.module';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   imports: [
     BrowserModule,
@@ -32,6 +32,8 @@ import { BookModule } from './books/book.module';
     MatCheckboxModule,
     MatInputModule,
     BookModule,
+    MatTableModule,
+    MatCardModule,
     // RegstrModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

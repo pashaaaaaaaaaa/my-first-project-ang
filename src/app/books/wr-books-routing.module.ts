@@ -17,7 +17,6 @@ const getBookRout: Routes = [
     { path: 'title-4', component: FourthPageComponent }, 
     { path: 'title-5', component: FifthPageComponent }, 
   ]},
-
 ]
 
 @NgModule({

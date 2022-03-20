@@ -11,6 +11,10 @@ import { WrBooksComponent } from './wr-books.component';
 import { WrBooksRoutingModule } from './wr-books-routing.module';
 import { PaginationBookComponent } from './pagination-book/pagination-book.component';
 import { MatButtonModule } from '@angular/material/button';
+import { TableBooksComponent } from './table-books/table-book.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http'
 
 
 
@@ -26,11 +30,15 @@ import { MatButtonModule } from '@angular/material/button';
     FifthPageComponent,
     WrBooksComponent,
     PaginationBookComponent,
+    TableBooksComponent,
   ],
   imports: [
     MatButtonModule,
     CommonModule, 
-    WrBooksRoutingModule
+    WrBooksRoutingModule,
+    HttpClientModule,
+    MatCardModule,
+    MatTableModule
     // AppModule
   ]
 })
