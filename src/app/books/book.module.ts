@@ -38,8 +38,8 @@ import { HttpClientModule } from '@angular/common/http'
     WrBooksRoutingModule,
     HttpClientModule,
     MatCardModule,
-    MatTableModule
-    // AppModule
+    MatTableModule,
+    AppModule
   ]
 })
 export class BookModule { }

@@ -1,34 +1,49 @@
 <div class="container">
-    <table mat-table  class="mat-elevation-z8">
+  <table mat-table
+  [dataSource]="table" multiTemplateDataRows
+  class="mat-elevation-z8">
+      <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
+        <div *ngIf="column == 'id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+        </div>  
+        <div *ngIf="column == 'title">
+          <td mat-cell *matCellDef="let element"> НАЗВАНИЕ </td>
+        </div>  
+        <div *ngIf="column == 'qtyRelease'">
+          <td mat-footer-cell *matFooterCellDef> ТИРАЖ (шт)</td>
+        </div>
 
-        <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
-      
-        <!-- id Column -->
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef> id </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-	    	  <td mat-footer-cell *matFooterCellDef> Total: </td>
-        </ng-container>
-      
-        <!-- Title Column -->
-        <ng-container matColumnDef="title">
-          <th mat-header-cell *matHeaderCellDef> Title </th>
-          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-	    	  <td mat-footer-cell *matFooterCellDef></td>
-        </ng-container>
-      
-        <!-- Quanity Column -->
-        <ng-container matColumnDef="qtyRelease">
-          <th mat-header-cell *matHeaderCellDef> Quanity </th>
-          <td mat-cell *matCellDef="let element"> {{element.qtyRelease}} </td>
-		      <td mat-footer-cell *matFooterCellDef> {{ total }} </td>
-        </ng-container>
-      
-        <!-- Symbol Column -->
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-	    	<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-	    	<tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
-      </table>
-	<mat-card *ngIf="description" class="card"> {{ description }} </mat-card>
+        <td mat-cell *matCellDef="let elem">{{elem[column]}}</td>
+
+        <div *ngIf="column == 'id'">
+          <td mat-footer-cell *matFooterCellDef> ИТОГО ПРОДАЖ </td>
+        </div>
+        <div *ngIf="column == 'title'">
+          <td mat-footer-cell *matFooterCellDef></td>
+        </div>
+        <div *ngIf="column == 'qtyRelease'">
+          <td mat-footer-cell *matFooterCellDef> {{total}}</td>
+        </div>
+      </ng-container>
+
+      <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+                <div class="example-element-detail"
+                      [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                  <div class="example-element-description">
+                    {{element.description}}
+                  </div>
+                </div>
+                </td>
+      </ng-container> 
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumns;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+      </tr>
+      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+      <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+  </table>
 </div>
