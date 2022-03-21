@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -22,18 +22,26 @@ import { CamelCase } from './pipes/camelCase.pipe';
 import { BookModule } from './books/book.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { TableBooksComponent } from './books/table-books/table-book.component';
+
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MatButtonModule,
     MatCheckboxModule,
+    MatButtonModule,
     MatInputModule,
-    BookModule,
+    MatInputModule,
+    MatTableModule,
+    MatInputModule,
     MatTableModule,
     MatCardModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BookModule,
+
     // RegstrModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -41,8 +49,6 @@ import { MatTableModule } from '@angular/material/table';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-
-    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
@@ -51,8 +57,10 @@ import { MatTableModule } from '@angular/material/table';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    TableBooksComponent, 
   ],
+  providers: [],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

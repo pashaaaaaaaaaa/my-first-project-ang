@@ -1,19 +1,19 @@
 <div class="container">
   <table mat-table
-  [dataSource]="table" multiTemplateDataRows
-  class="mat-elevation-z8">
+        [dataSource]="table" multiTemplateDataRows
+        class="mat-elevation-z8">
       <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
-        <div *ngIf="column == 'id">
+        <div *ngIf="column == 'id'">
           <th mat-header-cell *matHeaderCellDef> ID </th>
         </div>  
-        <div *ngIf="column == 'title">
-          <td mat-cell *matCellDef="let element"> НАЗВАНИЕ </td>
+        <div *ngIf="column == 'title'">
+          <th mat-cell *matHeaderCellDef="let element"> НАЗВАНИЕ </th>
         </div>  
         <div *ngIf="column == 'qtyRelease'">
-          <td mat-footer-cell *matFooterCellDef> ТИРАЖ (шт)</td>
+          <th mat-footer-cell *matHeaderCellDef> ТИРАЖ (шт)</th>
         </div>
 
-        <td mat-cell *matCellDef="let elem">{{elem[column]}}</td>
+        <td mat-cell *matCellDef="let element">{{element[column]}}</td>
 
         <div *ngIf="column == 'id'">
           <td mat-footer-cell *matFooterCellDef> ИТОГО ПРОДАЖ </td>

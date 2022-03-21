@@ -30,16 +30,14 @@ import { HttpClientModule } from '@angular/common/http'
     FifthPageComponent,
     WrBooksComponent,
     PaginationBookComponent,
-    TableBooksComponent,
+    // TableBooksComponent,
   ],
   imports: [
     MatButtonModule,
     CommonModule, 
     WrBooksRoutingModule,
     HttpClientModule,
-    MatCardModule,
-    MatTableModule,
-    AppModule
+    // AppModule
   ]
 })
 export class BookModule { }
