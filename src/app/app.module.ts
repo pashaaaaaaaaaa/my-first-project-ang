@@ -23,6 +23,9 @@ import { BookModule } from './books/book.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { TableBooksComponent } from './books/table-books/table-book.component';
+import { TextModificatorDirective } from './directives/text-modificator.directive';
+import { TextModificatorHostDirective } from './directives/text-modificator-host.directive';
+import { TextRainbowColorDirective } from './directives/text-rainbow-color.directive';
 
 @NgModule({
   imports: [
@@ -59,6 +62,9 @@ import { TableBooksComponent } from './books/table-books/table-book.component';
     MessagesComponent,
     HeroSearchComponent,
     TableBooksComponent, 
+    TextModificatorHostDirective,
+    TextModificatorDirective,
+    TextRainbowColorDirective
   ],
   providers: [],
   bootstrap: [ AppComponent ]
