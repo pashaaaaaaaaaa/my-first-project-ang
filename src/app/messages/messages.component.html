@@ -1,6 +1,6 @@
 <div *ngIf="messageService.messages.length">
 
-    <h2>Messages</h2>
+    <h2 appTextModificator [background]="'blue'"  [str]="'hello'">Messages</h2>
     <button type="button"
             class="clear"
             mat-flat-button color="primary"

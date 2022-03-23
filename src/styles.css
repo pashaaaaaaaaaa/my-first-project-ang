@@ -44,8 +44,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 32px;
   font-family: monospace;
   letter-spacing: 5px;
-  animation: colorRotate .5s ease-in-out 0s infinite;
-  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  animation: colorRotate 10s ease-in-out 0s infinite;
+  /* background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff); */
 
 }
 

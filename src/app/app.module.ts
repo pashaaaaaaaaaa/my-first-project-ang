@@ -22,10 +22,14 @@ import { CamelCase } from './pipes/camelCase.pipe';
 import { BookModule } from './books/book.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
-import { TableBooksComponent } from './books/table-books/table-book.component';
 import { TextModificatorDirective } from './directives/text-modificator.directive';
 import { TextModificatorHostDirective } from './directives/text-modificator-host.directive';
 import { TextRainbowColorDirective } from './directives/text-rainbow-color.directive';
+import { FormComponentComponent } from './form/form-component/form-component.component';
+import { TableBooksComponent } from './books/table-books/table-book.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatListModule } from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon'
 
 @NgModule({
   imports: [
@@ -39,12 +43,15 @@ import { TextRainbowColorDirective } from './directives/text-rainbow-color.direc
     MatTableModule,
     MatInputModule,
     MatTableModule,
+    MatInputModule,
     MatCardModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     BookModule,
-
+    MatChipsModule,
+    MatListModule,
+    MatIconModule,
     // RegstrModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -64,7 +71,8 @@ import { TextRainbowColorDirective } from './directives/text-rainbow-color.direc
     TableBooksComponent, 
     TextModificatorHostDirective,
     TextModificatorDirective,
-    TextRainbowColorDirective
+    TextRainbowColorDirective,
+    FormComponentComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]

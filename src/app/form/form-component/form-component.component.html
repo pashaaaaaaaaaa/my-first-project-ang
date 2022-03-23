@@ -1,0 +1,69 @@
+<div class="container">
+    <form [formGroup]="formProfile" >
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Имя:</mat-label>
+            <input matInput placeholder="" class="inp" formControlName="name" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Фамилия:</mat-label>
+            <input matInput placeholder="" formControlName="lastname" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Отчество:</mat-label>
+            <input matInput placeholder="" formControlName="fatherName" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Почтовый адрес:</mat-label>
+            <input matInput placeholder="" formControlName="email" >
+        </mat-form-field>
+
+<!-- мои таланты -->
+
+
+        <mat-form-field class="example-chip-list" appearance="fill">
+            <mat-label>Мои таланты</mat-label>
+            <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip *ngFor="let skill of skillsCopy" (removed)="remove(skill)">
+
+                {{skill.name}}
+    
+                <button matChipRemove>
+                      <mat-icon class="icon">x</mat-icon>
+                </button>
+            </mat-chip>
+    
+            <input placeholder="New skill..."
+                   [matChipInputFor]="chipList"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="addOnBlur"
+                   (matChipInputTokenEnd)="add($event)"
+                   type="text" 
+                   #skillsInput>
+    
+            </mat-chip-list>
+        </mat-form-field>
+        
+    </form>
+    <!-- <select>
+        <option selected [ngValue]="null">Talanted</option>
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+    </select>-->
+    <div class="btn">
+        <button mat-stroked-button color="accent" type="submit" [disabled]="!formProfile.valid">Добавить</button>
+        <button mat-stroked-button color="accent" class="btn-clear" (click)="clearForm()">Очистить</button>
+    </div> 
+
+    <div class="text">
+        <p>ИМЯ:{{formProfile.value.name}}</p>
+        <p>ФАМИЛИЯ:{{formProfile.value.lastname}}</p>
+        <p>ОТЧЕСТВО:{{formProfile.value.fatherName}}</p>
+        <p> EMAIL:{{formProfile.value.email}}</p>
+    </div>
+</div>
+
