@@ -71,4 +71,9 @@ table{
 }
 tr.example-detail-row {
 	height: 0;
-  }
+}
+.chart{
+	border-radius: 20px;
+	background: #3440e4;
+	color: white;
+}
