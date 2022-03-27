@@ -29,7 +29,9 @@ import { FormComponentComponent } from './form/form-component/form-component.com
 import { TableBooksComponent } from './books/table-books/table-book.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatListModule } from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon'
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   imports: [
@@ -52,27 +54,29 @@ import {MatIconModule} from '@angular/material/icon'
     MatChipsModule,
     MatListModule,
     MatIconModule,
+    MatDialogModule,
+    MatTabsModule,
     // RegstrModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    ),
-  ],
-  declarations: [
-    AppComponent,
-    CamelCase,
-    DashboardComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
-    HeroSearchComponent,
-    TableBooksComponent, 
-    TextModificatorHostDirective,
-    TextModificatorDirective,
-    TextRainbowColorDirective,
-    FormComponentComponent
+      ),
+    ],
+    declarations: [
+      AppComponent,
+      CamelCase,
+      DashboardComponent,
+      HeroesComponent,
+      HeroDetailComponent,
+      MessagesComponent,
+      HeroSearchComponent,
+      TableBooksComponent, 
+      TextModificatorHostDirective,
+      TextModificatorDirective,
+      TextRainbowColorDirective,
+      FormComponentComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]

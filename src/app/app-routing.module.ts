@@ -7,6 +7,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { ForRegistrationComponent} from './regstr/for-registration/for-registration.component'
 import { TableBooksComponent } from './books/table-books/table-book.component';
 import { FormComponentComponent } from './form/form-component/form-component.component';
+import { BookChartComponent } from './books/book-chart/book-chart/book-chart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'reg', component: ForRegistrationComponent }, 
   { path: 'table-book', component: TableBooksComponent}, 
   { path: 'form', component: FormComponentComponent}, 
+  { path: 'book-chart', component: BookChartComponent}, 
 
 ];
 

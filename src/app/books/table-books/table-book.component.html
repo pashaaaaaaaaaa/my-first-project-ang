@@ -46,4 +46,12 @@
       <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
       <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
   </table>
+
+  <!-- chart sets -->
+
+  <div class="chart_btn">
+    <button mat-raised-button color="primary" (click)="openDialog()" class="chart">График</button>
+  </div>
+
+
 </div>

@@ -27,13 +27,14 @@
         <mat-form-field class="example-chip-list" appearance="fill">
             <mat-label>Мои таланты</mat-label>
             <mat-chip-list #chipList aria-label="Fruit selection">
-            <mat-chip *ngFor="let skill of skillsCopy" (removed)="remove(skill)">
+            <mat-chip *ngFor="let skill of skills.controls; let ind = index" (removed)="remove(ind)">
 
-                {{skill.name}}
+                {{skill.value}}
     
                 <button matChipRemove>
                       <mat-icon class="icon">x</mat-icon>
                 </button>
+
             </mat-chip>
     
             <input placeholder="New skill..."
@@ -64,6 +65,7 @@
         <p>ФАМИЛИЯ:{{formProfile.value.lastname}}</p>
         <p>ОТЧЕСТВО:{{formProfile.value.fatherName}}</p>
         <p> EMAIL:{{formProfile.value.email}}</p>
+        <p> SKILLS:{{formProfile.value.skills}}</p>
     </div>
 </div>
 

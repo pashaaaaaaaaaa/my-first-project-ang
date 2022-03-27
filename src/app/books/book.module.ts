@@ -10,7 +10,10 @@ import { WrBooksComponent } from './wr-books.component';
 import { WrBooksRoutingModule } from './wr-books-routing.module';
 import { PaginationBookComponent } from './pagination-book/pagination-book.component';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { BookChartComponent } from './book-chart/book-chart/book-chart.component'
+import { AppComponent } from '../app.component';
+import { ModalBookComponent } from './modal-book/modal-book.component';
 
 
 
@@ -26,6 +29,8 @@ import { HttpClientModule } from '@angular/common/http'
     FifthPageComponent,
     WrBooksComponent,
     PaginationBookComponent,
+    ModalBookComponent,
+    BookChartComponent
   ],
   imports: [
     MatButtonModule,

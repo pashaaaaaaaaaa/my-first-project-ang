@@ -1,5 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ChartTransferService } from '../chart.service';
+import { ModalBookComponent } from '../modal-book/modal-book.component';
 import { SetOne, SetTwo } from './table-book';
 import { WrSets } from './table-book';
 import { TableBookService } from './table-book.service';
@@ -18,7 +21,14 @@ import { TableBookService } from './table-book.service';
 })
 export class TableBooksComponent implements OnInit {
   expandedElement: SetOne | null = null;
-  constructor(private tableBooksService: TableBookService) {}
+  
+  constructor(
+    private tableBooksService: TableBookService,
+    private chartTransfer: ChartTransferService,
+    public dialog: MatDialog
+    ) {
+    
+  }
 
   table: WrSets[] = [];
   tmp: WrSets[] = []
@@ -48,6 +58,19 @@ export class TableBooksComponent implements OnInit {
     for (let i = 0; i < this.table.length; i++) {
       this.total += this.table[i].qtyRelease
     }
+  }
+
+  openDialog(): void {
+    this.chartTransfer.saveData(this.table)
+    console.log("opened dialog")
+    const dialogRef = this.dialog.open(ModalBookComponent, {
+      data: this.table,
+      disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   ngOnInit(): void {

@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { COMMA, ENTER, I } from '@angular/cdk/keycodes';
 import { ValidateCyrillic } from '../../../../src/ruslang/rus.validator';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { mySkill } from './form-comp';
@@ -12,18 +12,29 @@ import { mySkill } from './form-comp';
 })
 
 export class FormComponentComponent implements OnInit {
-  // form: any;
+
+  skillsCopy: mySkill[] = [{name: 'Доброта'}, {name: 'Честность'}, {name: 'Мечтатель))))'}];
+  
+  readonly powers: string[] = this.skillsCopy.map(el => el.name);
+
+  constructor(private fb: FormBuilder, private element: ElementRef) {
+    console.log(this.element)
+    console.log(this.skillsCopy, "this")
+    // console.log(document.getElementById('skills-input'))
+  }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
+  
   formProfile = new FormGroup({
     name : new FormControl('', ValidateCyrillic),
     lastname : new FormControl('', ValidateCyrillic),
     fatherName : new FormControl('', ValidateCyrillic),
-    email : new FormControl('', ValidateCyrillic),
-    skills: new FormArray([])
+    email : new FormControl('', []),
+    skills: new FormArray(this.powers.map(el => new FormControl(el)))
   })
+
+  
 
   get skills() {
     return this.formProfile.get('skills') as FormArray;
@@ -31,14 +42,13 @@ export class FormComponentComponent implements OnInit {
   
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  skillsCopy: mySkill[] = [{name: 'Доброта'}, {name: 'Честность'}, {name: 'Мечтатель))))'}];
+  
 
   add(event: MatChipInputEvent): void {
-    const value = (event.value || '').trim();
+    const value = event.value.trim() || '';
 
     // добавление умение 
     if (value) {
-      this.skillsCopy.push({name: value});
       this.skills.push(this.fb.control(value));
     }
 
@@ -46,31 +56,21 @@ export class FormComponentComponent implements OnInit {
     event.chipInput!.clear();
   }
 
-  remove(skill: mySkill): void {
-    const index = this.skillsCopy.indexOf(skill);
-
-    if (index >= 0) {
-      this.skillsCopy.splice(index, 1);
-      this.skills.removeAt(index);
-    }
+  remove(ind: number): void {
+    //Любой вариант подойдет
+      //this.skills.controls.splice(ind, 1);
+      this.skills.removeAt(ind);
   }
 
   clearForm() {
     this.formProfile.reset();
-    this.skills.clear()
-    this.skillsCopy = [{name: 'Жизнерадостность'}, {name: 'Заинтересованность'}, {name: 'Интеллект'}];
-    for (let i = 0; i < this.skillsCopy.length; i++) {
-      this.skills.push(this.fb.control(this.skillsCopy[i].name));
-    }
+    this.skills.patchValue(this.powers);
+    this.skills.controls.splice(3);
+    //любой вариант подойдет
+    //this.skills.clear();
+    /*for (let i = 0; i < this.powers.length; i++) {
+      this.skills.push(this.fb.control(this.powers[i]));
+    }*/
   }
-
-  constructor(private fb: FormBuilder, private element: ElementRef) {
-    for (let i = 0; i < this.skillsCopy.length; i++) {
-      this.skills.push(this.fb.control(this.skillsCopy[i].name));
-    }
-    console.log(this.element)
-    // console.log(document.getElementById('skills-input'))
-  }
-
 
 }
