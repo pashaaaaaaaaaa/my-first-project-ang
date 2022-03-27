@@ -1,12 +1,9 @@
 
 
 .modal-container {
-    background: red
-    ;
     width: 600px;
     height: 400px;
     position: relative;
-    border: 0.5px solid red;
 } 
 .close-btn {
       position: absolute;

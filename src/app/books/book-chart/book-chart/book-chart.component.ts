@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
-import { Chart, registerables } from 'chart.js'
+import { Chart } from 'chart.js'
 import { ChartTransferService } from '../../chart.service';
 @Component({
   selector: 'app-book-chart',
@@ -22,9 +22,9 @@ export class BookChartComponent implements OnInit {
               label: 'Продажи',
               data: this.data?.map(e => e.qtyRelease),
               backgroundColor: '#007bff',
+              borderWidth: 1,
               tension:0.2,
-              borderColor: '#007bff',
-              borderWidth: 1
+              borderColor: '#007bff'
           }]
       },
       options: {
