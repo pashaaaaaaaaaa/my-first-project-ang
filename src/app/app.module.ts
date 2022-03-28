@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -32,6 +32,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon'
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   imports: [
@@ -78,7 +79,14 @@ import { MatTabsModule } from '@angular/material/tabs';
       TextRainbowColorDirective,
       FormComponentComponent
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, 
+      multi: true,
+      useClass: TokenInterceptor
+
+    }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -12,7 +12,6 @@ export class BookChartComponent implements OnInit {
   // chart:any;
   data = this.chartTransfer.getData();  
   constructor(private chartTransfer: ChartTransferService) { }
-
   ngOnInit(): void {
     const myChart = new Chart("myChart", {
       type: 'line',
