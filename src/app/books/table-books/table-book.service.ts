@@ -11,8 +11,8 @@ import { concat } from 'rxjs';
 })
 export class TableBookService {
 
-  urlOne: string = 'api/setOne';
-  urlTwo: string = 'api/setTwo';
+  urlOne: string = 'http://localhost:4200/api/books.json';
+  urlTwo: string = 'http://localhost:4200/api/booksTwo.json';
   
   constructor(
     private http: HttpClient,
@@ -20,8 +20,8 @@ export class TableBookService {
 
   getSets(): Observable<WrSets[]> {
     return concat(
-        this.http.get<WrSets[]>(this.urlOne).pipe(),
-        this.http.get<WrSets[]>(this.urlTwo).pipe()
+        this.http.get<WrSets[]>(this.urlOne),
+        this.http.get<WrSets[]>(this.urlTwo)
       ).pipe(
         tap(_ => this.log('fetched set data of books')),
         catchError(this.handleError<WrSets[]>('getSets', []))
