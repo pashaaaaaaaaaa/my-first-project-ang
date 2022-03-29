@@ -12,13 +12,21 @@ export class TokenInterceptor implements HttpInterceptor{
 
     }
   
-    intercept( request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    intercept( request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+
+        const cloneRequest = request.clone({
+                headers: request.headers.set('X-Header', 'ты кто такой')
+        });
+            
+        console.log(cloneRequest)
 
       const req = request.clone({
 
         headers: request.headers.set(
+
           "Authorization",
-          "Basic SGVsbG9XYjphZG1pbg==87"
+          "Basic SGVsbG9XYjphZG1pbg=="
+          
         ),
       });
   
