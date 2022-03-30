@@ -20,17 +20,8 @@ export class TokenInterceptor implements HttpInterceptor{
             
         console.log(cloneRequest)
 
-      const req = request.clone({
-
-        headers: request.headers.set(
-
-          "Authorization",
-          "Basic SGVsbG9XYjphZG1pbg=="
-          
-        ),
-      });
   
-      return next.handle(req).pipe(
+      return next.handle(cloneRequest).pipe(
         catchError((error) => {
           if (error.status === 401) {
             this.router.navigateByUrl("/reg");
