@@ -39,7 +39,7 @@ export class TableBooksComponent implements OnInit {
   getSets(): void {
     this.tableBooksService.getSets()
         .subscribe(table => {
-          this.tmp = table
+          // this.tmp = table
           this.addStream()
         })
   }
@@ -69,7 +69,7 @@ export class TableBooksComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('The dialog was closed ');
     });
   }
 

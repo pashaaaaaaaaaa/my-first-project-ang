@@ -7,9 +7,11 @@ import { ThirdPageComponent } from './third-page/third-page.component';
 import { FourthPageComponent } from './fourth-page/fourth-page.component';
 import { FifthPageComponent } from './fifth-page/fifth-page.component';
 import { WrBooksComponent } from './wr-books.component';
+import { AuthGuard } from '../core/auth.guard';
 
 const getBookRout: Routes = [
-  { path: 'books', component: WrBooksComponent, children: [
+  { path: "book-main", component:WrBooksComponent, canActivate: [AuthGuard]},
+  { path: 'books', component: WrBooksComponent,canActivate: [AuthGuard], children: [
     { path: '', redirectTo: '/books/title-1', pathMatch: 'full' },
     { path: 'title-1', component: FirstPageComponent }, 
     { path: 'title-2', component: SecondPageComponent }, 

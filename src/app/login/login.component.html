@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+	<ng-container *ngIf="!authService.isLoggedIn; else logout" class="form-wrap">
+		<mat-form-field appearance="fill">
+			<mat-label for="login">Login</mat-label>
+			<input matInput name="login" type="text" [formControlName]="'login'" appearance="fill" #userName>
+			<mat-error *ngIf="isControlInvalid('login')">Not a valid email</mat-error>
+		</mat-form-field>
+
+		<mat-form-field class="mff" appearance="fill">
+			<mat-label for="password">Password</mat-label>
+			<input matInput name="password" type="password" [formControlName]="'password'" appearance="fill" #userPassword>
+			<mat-error *ngIf="isControlInvalid('login')">Not a valid password</mat-error>
+		</mat-form-field>
+
+		<div class="button-wrapper">
+			<button mat-raised-button color="primary" type="submit" (click)="authService.SignIn(userName.value, userPassword.value)" [disabled]="!form.valid">Login</button>
+			<button mat-raised-button color="warn" type="submit" (click)="authService.GoogleAuth()" class="google-btn">
+				<mat-icon class="material-icons-outlined">login</mat-icon>
+				Login with Google
+			</button>
+		</div>
+	</ng-container>
+	
+	<ng-template #logout >
+		<div class="button-wrapper">
+			<button mat-raised-button color="primary" type="submit" (click)="authService.signOut()">Logout</button>
+		</div>
+	</ng-template>
+</form>

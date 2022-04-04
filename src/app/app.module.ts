@@ -33,6 +33,15 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TokenInterceptor } from './token.interceptor';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { BackGuard } from './core/back.guard';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './core/auth.guard';
+import { environment } from './login/environment';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -57,6 +66,11 @@ import { TokenInterceptor } from './token.interceptor';
     MatIconModule,
     MatDialogModule,
     MatTabsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
     // RegstrModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -77,14 +91,20 @@ import { TokenInterceptor } from './token.interceptor';
       TextModificatorHostDirective,
       TextModificatorDirective,
       TextRainbowColorDirective,
-      FormComponentComponent
+      FormComponentComponent, 
+      LoginComponent
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS, 
       multi: true,
       useClass: TokenInterceptor
-
+    },
+    AuthService,
+    BackGuard,
+    { 
+      provide: AuthGuard, 
+      useClass: AuthGuard
     }
   ],
   bootstrap: [ AppComponent ]
