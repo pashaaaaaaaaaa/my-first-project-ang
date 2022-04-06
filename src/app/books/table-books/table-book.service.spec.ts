@@ -15,7 +15,7 @@ describe('TableBookService', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [HttpClientTestingModule, RouterTestingModule],
-        declarations: [TableBooksComponent],
+        // declarations: [TableBooksComponent],
         providers: [TableBooksComponent, HttpClient]
       })
       httpClient = TestBed.inject(HttpClient);

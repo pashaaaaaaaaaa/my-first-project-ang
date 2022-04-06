@@ -12,8 +12,8 @@ import { map } from '@firebase/util';
 })
 export class TableBookService {
 
-  urlOne: string = 'http://localhost:4200/api';
-  urlTwo: string = 'http://localhost:4200/api';
+  urlOne: string = 'http://localhost:4200/api/books.json';
+  urlTwo: string = 'http://localhost:4200/api/booksTwo.jsonkk';
 
   constructor(
     private http: HttpClient,
